@@ -1,0 +1,32 @@
+<form action="P_Verificaciones.php" method="POST">
+    <h1>VERIFICACIONES</h1>
+    <label>Id Verificacion: </label>
+    <input type="number" id="id_verificacion" name="IdVerificacion" value="" required>
+    <br></br>   
+    <label>Periodo: </label>
+    <input type="text" id="periodo" name="Periodo" value="" required>
+    <br></br>   
+    <label for="dictamen">Dictamen: </label>
+    <select id="dictamen" name="Dictamen" value="" required>
+        <option value="Yes">Aceptado</option>
+        <option value="No">Rechazado</option>
+    </select>
+    <br></br>   
+    <label>Fecha: </label>
+    <input type="date" id="fecha" name="Fecha" value="" required>
+    <br></br>   
+    <label>Hora: </label>
+    <input type="time" id="hora" name="Hora" value="" required>
+    <br></br>   
+    <label>Centro de Verificacion: </label>
+    <input type="text" id="c_verificacion" name="CVerificacion" value="" required>
+    <br></br>   
+    <label>Tecnico Verificador: </label>
+    <input type="text" id="t_verificador" name="TVerificador" value="" required>
+    <br></br>   
+    <label>Id Vehiculo: </label>
+    <input type="number" id="id_vehiculo" name="IdVehiculo" value="">
+    <br></br>   
+    <input type="submit" name="F_VERIFICACIONES">
+    <input type="reset">
+</form>

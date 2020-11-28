@@ -1,0 +1,50 @@
+<form action="P_CONDUCTORES.php" method="GET">
+    <h1>CONDUCTORES</h1>
+    <label>Id Conductor: </label>
+    <input type="number" id="id_conductor" name="IdConductor" value="" required>
+    <br><br>  
+    <label>Foto: </label>
+    <input type="text" id="foto" name="Foto" value="" required>
+    <br><br>  
+    <label>Huella: </label>
+    <input type="text" id="huella" name="Huella" value="" required>
+    <br><br>   
+    <label>Firma: </label>
+    <input type="text" id="firma" name="Firma" value="" required>
+    <br><br>    
+    <label>Nombre: </label>
+    <input type="text" id="nombre" name="Nombre" value="" required>
+    <br><br>   
+    <label>Fecha de Nacimiento: </label>
+    <input type="date" id="f_nacimiento" name="FechaNacimiento" value="">
+    <br><br>   
+    <label for="t_sangre">Tipo de Sangre: </label>
+    <select id="t_sangre" name="TipoSangre" value="">
+        <option value="ap">A+</option>
+        <option value="an">A-</option>
+        <option value="bp">B+</option>
+        <option value="bn">B-</option>
+        <option value="op">O+</option>
+        <option value="on">O-</option>
+        <option value="abp">AB+</option>
+        <option value="abn">B-</option>
+    </select>
+    <br><br>  
+    <label>Observacion: </label>
+    <input type="text" id="observacion" name="Observacion" value="">
+    <br><br> 
+    <label>Antiguedad: </label>
+    <input type="number" id="antiguedad" name="Antiguedad" value="">
+    <br><br> 
+    <label>Donador: </label><br>
+    <input type="radio" id="donador" name="Donador" value="Yes">
+    <label for="donador">Donador</label><br>
+    <input type="radio" id="nodonador" name="Donador" value="No">
+    <label for="nodonador">No Donador</label>
+    <br><br> 
+    <label>Telefono de Emergencia: </label>
+    <input type="tel" id="t_emergencia" name="TelefonoEmergencia" value="">
+    <br><br> 
+    <input type="submit" name="F_CONDUCTORES">
+    <input type="reset">
+</form>
