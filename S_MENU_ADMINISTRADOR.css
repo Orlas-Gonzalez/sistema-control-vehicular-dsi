@@ -1,0 +1,65 @@
+body{
+    background-image: url('Images/CSS/menu.jpg');
+}
+
+.Overlay{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Title{
+    color: white;
+}
+
+#Tit{
+    margin-left: 15px;
+    font-size: 250%;
+}
+
+#Name{
+    font-size: 150%;
+    top: 140px;
+    left: 515px;
+    position: absolute;
+}
+
+#Instruccions{
+    font-size: 150%;
+    top: 170px;
+    left: 510px;
+    position: absolute;
+}
+
+#Formulario{
+    margin-left: 60px;
+}
+
+.RB{
+    color: white;
+}
+
+.Btn{
+    font-weight: bold;
+}
+
+#Submit{
+    width: 177px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.BtnClose{
+    font-weight: bold;
+    width: 100px;
+    top: 430px;
+    left: 1128px;
+    position: absolute;
+}
+

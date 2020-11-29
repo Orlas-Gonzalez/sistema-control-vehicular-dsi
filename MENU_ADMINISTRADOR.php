@@ -50,36 +50,44 @@
     }
     </script>
 <html>
-    <h1 style="text-align: center;">ADMINISTRADOR</h1>
-    <h2 style="text-align: center;">Nombre: <?php print($_SESSION['Usuario']); ?></h2>
-    <h3 style="text-align: center;">¿Qué Deseas Hacer?</h3>
-    <form name="selection">
-        <input type="radio" id="insertar" name="OP" value="I" onClick="HabilitaI(this.form)">
-        <label for="insertar">Insertar</label>
-        <input type="radio" id="sedeup" name="OP" value="SDU" onClick="HabilitaSDU(this.form)">
-        <label for="sedeup">Consultar, Eliminar & Actualizar</label><br>
-        <h3>Menú de Inserción</h3>
-        <a href="F_ALTAS.html"><button type="button" onclick="" disabled name="IButtons">Altas</button></a>
-        <a href="F_BAJAS.html"><button type="button" onclick="" disabled name="IButtons">Bajas</button></a>
-        <a href="F_CONDUCTORES.html"><button type="button" onclick="" disabled name="IButtons">Conductores</button></a>
-        <a href="F_LICENCIAS.html"><button type="button" onclick="" disabled name="IButtons">Licencias</button></a>
-        <a href="F_MULTAS.html"><button type="button" onclick="" disabled name="IButtons">Multas</button></a>
-        <a href="F_PROPIETARIOS.html"><button type="button" onclick="" disabled name="IButtons">Propietarios</button></a>
-        <a href="F_TENENCIAS.html"><button type="button" onclick="" disabled name="IButtons">Tenencias</button></a>
-        <a href="F_VEHICULOS.html"><button type="button" onclick="" disabled name="IButtons">Vehiculos</button></a>
-        <a href="F_VERIFICACIONES.html"><button type="button" onclick="" disabled name="IButtons">Verificaciones</button></a>
-        <h3>Menú de Consulta, Eliminación & Actualización</h3>
-        <a href="C_ALTAS.php"><button type="button" onclick="" disabled name="SDUButtons">Altas</button></a>
-        <a href="C_BAJAS.php"><button type="button" onclick="" disabled name="SDUButtons">Bajas</button></a>
-        <a href="C_CONDUCTORES.php"><button type="button" onclick="" disabled name="SDUButtons">Conductores</button></a>
-        <a href="C_LICENCIAS.php"><button type="button" onclick="" disabled name="SDUButtons">Licencias</button></a>
-        <a href="C_MULTAS.php"><button type="button" onclick="" disabled name="SDUButtons">Multas</button></a>
-        <a href="C_PROPIETARIOS.php"><button type="button" onclick="" disabled name="SDUButtons">Propietarios</button></a>
-        <a href="C_TENENCIAS.php"><button type="button" onclick="" disabled name="SDUButtons">Tenencias</button></a>
-        <a href="C_VEHICULOS.php"><button type="button" onclick="" disabled name="SDUButtons">Vehiculos</button></a>
-        <a href="C_VERIFICACIONES.php"><button type="button" onclick="" disabled name="SDUButtons">Verificaciones</button></a><br>
-    </form>
-    <a href="Cerrar_Sesion.php">Cerrar</a>
+<head>
+    <link rel=StyleSheet href="S_MENU_ADMINISTRADOR.css" type="text/css">
+    <title>Menu Administrador</title>
+</head>
+<body>
+    <div class="Overlay">
+        <div class="Title" id="Tit">ADMINISTRADOR</div>
+        <div class="Title" id="Name">Nombre: <?php print($_SESSION['Usuario']); ?></div>
+        <div class="Title" id="Instruccions">¿Qué Deseas Hacer?</div>
+        <form name="selection" id="Formulario">
+            <input type="radio" id="insertar" name="OP" value="I" onClick="HabilitaI(this.form)">
+            <label for="insertar" class="RB">Insertar</label>
+            <input type="radio" id="sedeup" name="OP" value="SDU" onClick="HabilitaSDU(this.form)">
+            <label for="sedeup" class="RB">Consultar, Eliminar & Actualizar</label><br>
+            <h3 class="Title">Menú de Inserción</h3>
+            <a href="F_ALTAS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Altas</button></a>
+            <a href="F_BAJAS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Bajas</button></a>
+            <a href="F_CONDUCTORES.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Conductores</button></a>
+            <a href="F_LICENCIAS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Licencias</button></a>
+            <a href="F_MULTAS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Multas</button></a>
+            <a href="F_PROPIETARIOS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Propietarios</button></a>
+            <a href="F_TENENCIAS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Tenencias</button></a>
+            <a href="F_VEHICULOS.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Vehiculos</button></a>
+            <a href="F_VERIFICACIONES.html"><button type="button" onclick="" disabled name="IButtons" class="Btn">Verificaciones</button></a>
+            <h3 class="Title">Menú de Consulta, Eliminación & Actualización</h3>
+            <a href="C_ALTAS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Altas</button></a>
+            <a href="C_BAJAS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Bajas</button></a>
+            <a href="C_CONDUCTORES.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Conductores</button></a>
+            <a href="C_LICENCIAS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Licencias</button></a>
+            <a href="C_MULTAS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Multas</button></a>
+            <a href="C_PROPIETARIOS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Propietarios</button></a>
+            <a href="C_TENENCIAS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Tenencias</button></a>
+            <a href="C_VEHICULOS.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Vehiculos</button></a>
+            <a href="C_VERIFICACIONES.php"><button type="button" onclick="" disabled name="SDUButtons" class="Btn">Verificaciones</button></a><br>
+        </form>
+        <br><a href="Cerrar_Sesion.php"><button type="button" onclick="" name="Close" class="BtnClose">Cerrar</button></a>
+    </div>
+</body>
 </html>
 
 <?php
