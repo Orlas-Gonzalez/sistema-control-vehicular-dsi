@@ -43,6 +43,11 @@ body{
     background-color: white;
 }
 
+.TableD{
+    margin-top: 430px;
+    background-color: white;
+}
+
 .Header{
     background-color: brown;
     color: white;
@@ -54,3 +59,10 @@ body{
     position: absolute;
     top: 445px;
 }
+
+.RowsD{
+    color: white;
+    position: absolute;
+    top: 600px;
+}
+
