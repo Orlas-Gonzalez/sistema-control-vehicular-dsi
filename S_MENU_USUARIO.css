@@ -1,0 +1,120 @@
+body{
+    background-image: url('Images/CSS/menu.jpg');
+}
+
+.Overlay{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Title{
+    color: white;
+}
+
+#Tit{
+    margin-left: -700px;
+    font-size: 250%;
+}
+
+#Name{
+    font-size: 150%;
+    top: 180px;
+    left: 450px;
+    position: absolute;
+}
+
+#Instruccions{
+    font-size: 150%;
+    top: 210px;
+    left: 450px;
+    position: absolute;
+}
+
+#Formulario{
+    margin-left: 60px;
+}
+
+.RB{
+    color: white;
+}
+
+.BtnSelect{
+    font-weight: bold;
+    position: absolute;
+}
+
+#BtnAltas{
+    top: 250px;
+    left: 450px;
+    width: 150px;
+}
+
+#BtnBajas{
+    top: 250px;
+    left: 610px;
+    width: 150px;
+}
+
+#BtnConductores{
+    top: 250px;
+    left: 770px;
+    width: 150px;
+}
+
+#BtnLicencias{
+    top: 280px;
+    left: 450px;
+    width: 150px;
+}
+
+#BtnMultas{
+    top: 280px;
+    left: 610px;
+    width: 150px;    
+}
+
+#BtnPropietarios{
+    top: 280px;
+    left: 770px;
+    width: 150px;
+}
+
+#BtnTenencias{
+    top: 310px;
+    left: 450px;
+    width: 150px;
+}
+
+#BtnVehiculos{
+    top: 310px;
+    left: 610px;
+    width: 150px;
+}
+
+#BtnVerificaciones{
+    top: 310px;
+    left: 770px;
+    width: 150px;
+}
+
+#Submit{
+    width: 177px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.BtnClose{
+    font-weight: bold;
+    width: 150px;
+    top: 340px;
+    left: 770px;
+    position: absolute;
+}
+
