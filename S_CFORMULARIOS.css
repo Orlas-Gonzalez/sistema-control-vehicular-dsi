@@ -1,0 +1,56 @@
+body{
+    background-image: url('Images/CSS/fondo.png');
+}
+
+.Overlay{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Title{
+    color: white;
+}
+
+.RB{
+    color: white;
+    font-weight: bold;
+}
+
+.Btn{
+    font-weight: bold;
+    width: 150px;    
+}
+
+#Formulario{
+    top: 40px;
+    position: absolute;
+}
+
+#Criterio{
+    width: 240px;
+    text-align: center;
+}
+
+.Table{
+    margin-top: 190px;
+    background-color: white;
+}
+
+.Header{
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+}
+
+.Rows{
+    color: white;
+    position: absolute;
+    top: 445px;
+}
