@@ -1,7 +1,56 @@
-.Centrar{
-    left: 550px;
-};
+body{
+    background-image: url('Images/CSS/fondo.png');
+}
+
+.Overlay{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Title{
+    color: white;
+    font-size: 400%;
+    top: 30px;
+    position: absolute;
+}
+
+#Usuario{
+    width: 200px;
+    height: 200px;
+    top: 110px;
+    position: absolute;
+}
+
+.Texto{
+    color: white;
+    font-size: 150%;
+}
 
 #LId_Cuenta{
-    top: 300px;
-};
+    margin-left: 38px;
+}
+
+#LPassword{
+    margin-left: 22px;
+}
+
+#Formulario{
+    top: 320px;
+    position: absolute;
+}
+
+#Submit{
+    width: 177px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+
+

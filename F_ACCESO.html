@@ -4,12 +4,16 @@
     <title>Login</title>
 </head>
 <body>
-    <form name="FormOne" method="POST" action="VALIDAACCESO.php">
-        <label for="IdCuenta" class="Centrar" id="LId_Cuenta"><b>Id Cuenta</b></label>
-        <input type="text" name="IdCuenta" class="Centrar" id="Id_Cuenta">
-        <label for="PWD" class="Centrar" id="LPassword"><b>Password</b></label>
-        <input type="text" name="PWD" class="Centrar" id="Password">
-        <input type="submit" class="Centrar" id="Submit">
-    </form>
+    <div class="Overlay">
+        <div class="Title">LOGIN</div>
+        <img src="Images/CSS/usuario.png" id="Usuario">
+        <form name="FormOne" method="POST" action="VALIDAACCESO.php" id="Formulario">
+            <label for="IdCuenta" class="Texto" id="LId_Cuenta"><b>CUENTA</b></label><br>
+            <input type="text" name="IdCuenta" id="Id_Cuenta"><br>
+            <label for="PWD"  class="Texto" id="LPassword"><b>PASSWORD</b></label><br>
+            <input type="text" name="PWD" id="Password"><br><br>
+            <input type="submit" id="Submit">
+        </form>
+    </div>
 </body>
 </html>
