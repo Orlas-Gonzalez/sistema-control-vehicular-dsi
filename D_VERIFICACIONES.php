@@ -6,9 +6,8 @@
 <body>
     <div class="Overlay">
         <img src="Images/CSS/eliminado.png" class="Registro">
-        <a href="C_VERIFICACIONES.php"><button type="button" onclick="" name="SDUButtons" class="Btn">Regresar</button></a><br>
+        <a href="C_VERIFICACIONES.php"><img src="Images/CSS/returng.png" class="Return"></a>
 <?php
-    
     $SKU_Ver = $_GET['SKU_Ver'];
     include("Controlador.php");
     $conn_MYSQL = conectar();
