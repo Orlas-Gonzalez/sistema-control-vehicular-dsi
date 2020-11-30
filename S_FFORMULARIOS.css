@@ -1,0 +1,173 @@
+body{
+   background-image: url('Images/CSS/fondo.png');
+}
+
+.Overlay{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: -250;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Overlay1{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: -300;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Overlay2{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: -150;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#primera_parte{
+    top: 350px;
+    left: 500;
+    position: absolute;
+    
+}
+#segunda_parte{
+
+    top: 430px;
+    left: 800;
+    position: absolute;
+    
+}
+#multas1{
+    top: 10px;
+    left: 0px;
+    position: absolute;
+    
+}
+#multas2{
+
+    top: 10px;
+    left: 300px;
+    position: absolute;
+    
+}
+.Overlay2{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+    top: -70;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.Title{
+    color: white;
+    font-size: 400%; /*tamaño de letra */
+    top: 100px; /*para hacer las cosas mas arriba o mas abajo */
+    left: -480;
+    position: absolute;
+}
+.Title1{
+    color: white;
+    font-size: 350%; /*tamaño de letra */
+    top: 133px; /*para hacer las cosas mas arriba o mas abajo */
+    left: -490;
+    position: absolute;
+}
+.Title2{
+    color: white;
+    font-size: 350%; /*tamaño de letra */
+    top: 133px; /*para hacer las cosas mas arriba o mas abajo */
+    left: -447;
+    position: absolute;
+}
+
+
+.Texto{
+    color: white;
+    font-size: 150%;
+    margin-left: 22px;
+}
+
+#Formulario{
+    top: 320px;
+    position: absolute;
+
+}
+#folio{
+    width: 160px;
+}
+#f_expedicion{
+    width: 160px;
+}
+#vigencia{
+    width: 160px;
+}
+#municipio{
+    width: 160px;
+}
+#hora{
+    width: 160px;
+}
+#id_vehiculo{
+    width: 160px;
+}
+#f_baja{
+    width: 160px;
+}
+#motivo{
+    width: 160px;
+}
+#t_sangre{
+    width: 160px;
+}
+#f_nacimiento{
+    width: 160px;
+}
+#nombre{
+    width: 160px;
+}
+#concepto{
+    width: 160px;
+}
+#no_infraccion{
+    width: 160px;
+}
+#policia{
+    width: 160px;
+}
+#fecha{
+    width: 160px;
+}
+#lugar{
+    width: 160px;
+}
+#garantia{
+    width: 160px;
+}
+#id_licencia{
+    width: 160px;
+}
+#id_vehiculo{
+    width: 160px;
+}
+#id_propietario{
+    width: 160px;
+}
+#rfc{
+    width: 160px;
+}
+
+

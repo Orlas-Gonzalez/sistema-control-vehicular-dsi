@@ -1,28 +1,39 @@
-<form action="P_LICENCIAS.php" method="POST">
-    <h1>LICENCIAS</h1>
-    <label>Id Licencia: </label>
-    <input type="number" id="id_licencia" name="IdLicencia" value="" required>
-    <br></br>   
-    <label for="t_licencia">Tipo de Licencia: </label>
-    <select id="t_licencia" name="TipoLicencia" value="" required>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-    </select>
-    <br></br>   
-    <label>Fecha de Expedición: </label>
-    <input type="date" id="f_expedicion" name="FechaExpedicion" value="" required>
-    <br></br>   
-    <label for="autorizacion">Autorizacion: </label>
-    <select id="autorizacion" name="Autorizacion" value="" required>
-        <option value="Yes">SI</option>
-        <option value="No">NO</option>
-    </select>
-    <br></br>   
-    <label>Id Conductor: </label>
-    <input type="number" id="id_condutor" name="IdConductor" value="" required>
-    <br></br>   
-    <input type="submit" name="F_LICENCIAS">
-    <input type="reset">
-</form>
+<html  
+head>
+<link rel=StyleSheet href="S_FFORMULARIOS.css" type="text/css">
+<title>Login</title>
+</head> 
+<body>
+    <div class="Overlay">
+        <form action="P_LICENCIAS.php" method="POST" id="Formulario">
+            <h1 class="Title2">LICENCIAS</h1>
+            <label class="texto">Id Licencia: </label><br>
+            <input type="number" id="id_licencia" name="IdLicencia" value="" required>
+            <br></br>   
+            <label for="t_licencia" class="texto">Tipo de Licencia: </label><br>
+            <select id="t_licencia" name="TipoLicencia" value="" required>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+            <br></br>   
+            <label class="texto" class="texto">Fecha de Expedición: </label><br>
+            <input type="date" id="f_expedicion" name="FechaExpedicion" value="" required>
+            <br></br>   
+            <label for="autorizacion" class="texto">Autorizacion: </label><br>
+            <select id="autorizacion" name="Autorizacion" value="" required>
+                <option value="Yes">SI</option>
+                <option value="No">NO</option>
+            </select>
+            <br></br>   
+            <label class="texto">Id Conductor: </label><br>
+            <input type="number" id="id_condutor" name="IdConductor" value="" required>
+            <br></br>   
+            <input type="submit" name="F_LICENCIAS">
+            <input type="reset">
+        </form>
+
+    </div>
+</body>
+</html>
