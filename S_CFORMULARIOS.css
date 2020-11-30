@@ -48,6 +48,26 @@ body{
     background-color: white;
 }
 
+.TableT{
+    margin-top: 400px;
+    background-color: white;
+}
+
+.TableC{
+    margin-top: 80px;
+    background-color: white;
+}
+
+.TableCi{
+    margin-top: 510px;
+    background-color: white;
+}
+
+.TableS{
+    margin-top: 255px;
+    background-color: white;
+}
+
 .Header{
     background-color: brown;
     color: white;
@@ -64,5 +84,29 @@ body{
     color: white;
     position: absolute;
     top: 600px;
+}
+
+.RowsT{
+    color: white;
+    position: absolute;
+    top: 570px;
+}
+
+.RowsC{
+    color: white;
+    position: absolute;
+    top: 390px;
+}
+
+.RowsCi{
+    color: white;
+    position: absolute;
+    top: 610px;
+}
+
+.RowsS{
+    color: white;
+    position: absolute;
+    top: 480px;
 }
 
