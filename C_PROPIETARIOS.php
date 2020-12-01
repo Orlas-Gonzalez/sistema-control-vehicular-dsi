@@ -49,6 +49,7 @@
                         <td><b>Nombre</b></td>
                         <td><b>Eliminar</b></td>
                         <td><b>Actualizar</b></td>
+                        <td><b>Tarjeta de Circulación</b></td>
                         </tr>
                 <?php
                         while ($Fila = mysqli_fetch_row($Resultado)) {
@@ -67,6 +68,7 @@
                 ?>
                                 <td><a href="D_Propietarios.php?SKU_Prop=<?php print($Fila[0]); ?>">Eliminar</a></td>
                                 <td><a href="U_Propietarios.php?IdPropietario=<?php print($Fila[0]); ?>&RFC=<?php print($Fila[1]); ?>&Nombre=<?php print($Fila[2]); ?>">Actualizar</a></td>
+                                <td><a href="G_TARJETA_PDF.php?IdLicencia=<?php print($Fila[0]); ?>">Visualizar</a></td>
                 <?php
                                 }
                 ?>

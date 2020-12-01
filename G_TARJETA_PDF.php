@@ -1,5 +1,5 @@
 <?php
-    require('../DSI/FPDF/fpdf.php'); 
+    require('../DSI/FPDF/fpdf.php');
     $pdf = new FPDF("L", "cm", array(10, 7)); 
     $pdf->AddPage(); 
     $pdf->SetDrawColor(30, 144, 255);
