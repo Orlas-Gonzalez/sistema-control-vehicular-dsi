@@ -55,6 +55,7 @@
                         <td><b>ID Conductor</b></td>
                         <td><b>Eliminar</b></td>
                         <td><b>Actualizar</b></td>
+                        <td><b>Licencia</b></td>
                         </tr>
                 <?php
                         while ($Fila = mysqli_fetch_row($Resultado)) {
@@ -75,6 +76,7 @@
                 ?>
                                 <td><a href="D_LICENCIAS.php?SKU_Lic=<?php print($Fila[0]); ?>">Eliminar</a></td>
                                 <td><a href="U_LICENCIAS.php?IdLicencia=<?php print($Fila[0]); ?>&TipoLicencia=<?php print($Fila[1]); ?>&FechaExpedicion=<?php print($Fila[2]); ?>&Autorizacion=<?php print($Fila[3]); ?>&IdConductor=<?php print($Fila[4]); ?>">Actualizar</a></td>
+                                <td><a href="G_LICENCIA_PDF.php?IdLicencia=<?php print($Fila[0]); ?>">Visualizar</a></td>
                 <?php
                                 }
                 ?>

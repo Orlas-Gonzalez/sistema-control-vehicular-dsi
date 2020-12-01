@@ -1,8 +1,9 @@
 <?php
+    $ID_Licencia = $_GET['IdLicencia'];
     // Obtención de Datos
     include("Controlador.php");
     $conn_MYSQL = conectar();
-    $SQL = "SELECT L.id_licencia, C.nombre, C.f_nacimiento, L.f_expedicion, C.antiguedad, L.t_licencia, C.observacion, C.t_sangre, C.donador, C.t_emergencia FROM licencias AS L, conductores AS C WHERE L.id_licencia = 1 AND L.id_conductor = C.id_conductor;";
+    $SQL = "SELECT L.id_licencia, C.nombre, C.f_nacimiento, L.f_expedicion, C.antiguedad, L.t_licencia, C.observacion, C.t_sangre, C.donador, C.t_emergencia FROM licencias AS L, conductores AS C WHERE L.id_licencia = $ID_Licencia AND L.id_conductor = C.id_conductor;";
     $Resultado = consultar($conn_MYSQL, $SQL);
     $Fila = mysqli_fetch_row($Resultado);
     cerrar($conn_MYSQL);
@@ -12,7 +13,6 @@
     $pdf = new FPDF("P", "cm", array(5.5, 9.49)); 
     
     // Vista Delantera
-
     $pdf->AddPage(); 
     $pdf->Image("../DSI/Images/Licencia/logo_estado.png", 0.2, 0.2, 1);
     $pdf->SetFont('Arial','', 5.3);
@@ -39,10 +39,10 @@
     $pdf->Cell(2.3, 0.3, utf8_decode($name_cond[2]), 0, 1, 'R');
     $pdf->SetXY(2.81, 4.3);
     $pdf->SetFont('Arial','', 8);
-    $pdf->Cell(2.3, 0.3, utf8_decode("Gomez"), 0, 1, 'R');
+    $pdf->Cell(2.3, 0.3, utf8_decode($name_cond[1]), 0, 1, 'R');
     $pdf->SetXY(2.86, 4.7);
     $pdf->SetFont('Arial','B', 11);
-    $pdf->Cell(2.3, 0.3, utf8_decode($name_cond[0]." ".$name_cond[1]), 0, 1, 'R');
+    $pdf->Cell(2.3, 0.3, utf8_decode($name_cond[0]), 0, 1, 'R');
     $pdf->SetXY(2.82, 4.95);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(2.3, 0.3, utf8_decode("Observaciones"), 0, 1, 'R');
@@ -166,8 +166,8 @@
     $pdf->Image("../DSI/Images/Licencia/qro_state.png", 0.6, 7.4, 0.8);
     $pdf->Image("../DSI/Images/Licencia/Seguridad.jpg", 3.7, 7.4, 1);
     include 'phpqrcode/qrlib.php';
-    $file = 'QRL.png'; 
-    $data = 'ORLANDO GONZÁLEZ'; 
+    $file = '../DSI/Images/QRCodes/QRL.png'; 
+    $data = "Id: ".$Fila[0]."; Nombre: ".$Fila[1]."; Fecha de Nacimiento: ".$Fila[2]."; Fecha de Expedicion: ".$Fila[3]."; Antiguedad: ".$Fila[4]."; Tipo: ".$Fila[5]."; Observaciones: ".$Fila[6]."; Tipo de Sangre: ".$Fila[7]."; Donador: ".$Fila[8]."; Telefono de Emergencia: ".$Fila[9]; 
     QRcode::png($data, $file);
-    $pdf->Image("QRL.png",  2.5, 7.4, 1);
+    $pdf->Image("../DSI/Images/QRCodes/QRL.png",  2.2, 7.4, 1);
     $pdf->Output();?>
