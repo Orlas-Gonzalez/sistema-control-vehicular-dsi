@@ -11,45 +11,61 @@
     $IdLicencia = $_GET['IdLicencia'];
     $IdVehiculo = $_GET['IdVehiculo'];
 ?>
+<html>  
+<head>
+<link rel=StyleSheet href="S_UFORMULARIO.css" type="text/css">
+<title>MULTAS</title>
+</head> 
+<body>
+    <div class="Overlay">
+        <form action="" method="POST">
+            <h1 class="Title">MULTAS</h1>
+            <div id="multas1">
+                <label class="Texto">Folio: </label><br>
+                <input type="text" id="folio" name="Folio" value="<?php print($Folio); ?>" required>
+                <br></br>   
+                <label class="Texto">Nombre: </label><br>
+                <input type="text" id="nombre" name="Nombre" value="<?php print($Nombre); ?>" required>
+                <br></br>   
+                <label class="Texto">Concepto: </label><br>
+                <input type="text" id="concepto" name="Concepto" value="<?php print($Concepto); ?>" required>
+                <br></br>   
+                <label class="Texto">No. Infraccion: </label><br>
+                <input type="text" id="no_infraccion" name="NoInfraccion" value="<?php print($NoInfraccion); ?>" required>
+                <br></br>   
+                <label class="Texto">Policia: </label><br>
+                <input type="text" id="policia" name="Policia" value="<?php print($Policia); ?>" required>
+                <br></br>   
+                <label class="Texto">Fecha: </label><br>
+                <input type="text" id="fecha" name="Fecha" value="<?php print($Fecha); ?>" required>
+                <br></br>  
+            </div>
+                
+          <div id="multas2">
+                <label class="Texto">Hora: </label><br>
+                <input type="text" id="hora" name="Hora" value="<?php print($Hora); ?>" required>
+                <br></br>   
+                <label class="Texto">Lugar: </label><br>
+                <input type="text" id="lugar" name="Lugar" value="<?php print($Lugar); ?>" required>
+                <br></br>   
+                <label class="Texto">Garantia: </label><br>
+                <input type="text" id="garantia" name="Garantia" value="<?php print($Garantia); ?>">
+                <br></br>   
+                <label class="Texto">Id Licencia: </label><br>
+                <input type="text" id="id_licencia" name="IdLicencia" value="<?php print($IdLicencia); ?>">
+                <br></br>   
+                <label class="Texto">Id Vehiculo: </label><br>
+                <input type="text" id="id_vehiculo" name="IdVehiculo" value="<?php print($IdVehiculo); ?>">
+                <br></br>   
+                <input type="submit" name="F_MULTAS">
+                <input type="reset">
+            </div>
+        </form>
 
-<form action="" method="POST">
-    <h1>MULTAS</h1>
-    <label>Folio: </label>
-    <input type="text" id="folio" name="Folio" value="<?php print($Folio); ?>" required>
-    <br></br>   
-    <label>Nombre: </label>
-    <input type="text" id="nombre" name="Nombre" value="<?php print($Nombre); ?>" required>
-    <br></br>   
-    <label>Concepto: </label>
-    <input type="text" id="concepto" name="Concepto" value="<?php print($Concepto); ?>" required>
-    <br></br>   
-    <label>No. Infraccion: </label>
-    <input type="text" id="no_infraccion" name="NoInfraccion" value="<?php print($NoInfraccion); ?>" required>
-    <br></br>   
-    <label>Policia: </label>
-    <input type="text" id="policia" name="Policia" value="<?php print($Policia); ?>" required>
-    <br></br>   
-    <label>Fecha: </label>
-    <input type="text" id="fecha" name="Fecha" value="<?php print($Fecha); ?>" required>
-    <br></br>   
-    <label>Hora: </label>
-    <input type="text" id="hora" name="Hora" value="<?php print($Hora); ?>" required>
-    <br></br>   
-    <label>Lugar: </label>
-    <input type="text" id="lugar" name="Lugar" value="<?php print($Lugar); ?>" required>
-    <br></br>   
-    <label>Garantia: </label>
-    <input type="text" id="garantia" name="Garantia" value="<?php print($Garantia); ?>">
-    <br></br>   
-    <label>Id Licencia: </label>
-    <input type="text" id="id_licencia" name="IdLicencia" value="<?php print($IdLicencia); ?>">
-    <br></br>   
-    <label>Id Vehiculo: </label>
-    <input type="text" id="id_vehiculo" name="IdVehiculo" value="<?php print($IdVehiculo); ?>">
-    <br></br>   
-    <input type="submit" name="F_MULTAS">
-    <input type="reset">
-</form>
+
+    </div>
+</body>
+</html>
 
 <?php
     if(isset($_POST['Folio'])){

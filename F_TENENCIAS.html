@@ -1,17 +1,29 @@
-<form action="P_TENENCIAS.php" method="GET">
-    <h1>TENENCIAS</h1>
-    <label>Id Tenencia: </label>
-    <input type="number" id="id_tenencia" name="IdTenencia" value="" required>
-    <br></br>   
-    <label>Periodo: </label>
-    <input type="text" id="periodo" name="Periodo" value="" required>
-    <br></br>   
-    <label>Monto: </label>
-    <input type="number" id="monto" name="Monto" value="" required>
-    <br></br>   
-    <label>Id Vehiculo: </label>
-    <input type="number" id="id_vehiculo" name="IdVehiculo" value="">
-    <br></br>   
-    <input type="submit" name="F_TENENCIAS">
-    <input type="reset">
-</form>
+<html  
+head>
+<link rel=StyleSheet href="S_FFORMULARIOS.css" type="text/css">
+<title>TENENCIAS</title>
+</head> 
+<body>
+    <div class="Overlay">
+        <form action="P_TENENCIAS.php" method="GET" id="Formulario">
+            <h1 class="Title">TENENCIAS</h1><br>
+            <label class="texto">Id Tenencia: </label><br>
+            <input type="number" id="id_tenencia" name="IdTenencia" value="" required>
+            <br></br>   
+            <label class="texto"> Periodo: </label><br>
+            <input type="text" id="periodo" name="Periodo" value="" required>
+            <br></br>   
+            <label class="texto">Monto: </label><br>
+            <input type="number" id="monto" name="Monto" value="" required>
+            <br></br>   
+            <label class="texto">Id Vehiculo: </label><br>
+            <input type="number" id="id_vehiculo" name="IdVehiculo" value="">
+            <br></br>   
+            <input type="submit" name="F_TENENCIAS">
+            <input type="reset">
+        </form>
+
+
+    </div>
+</body>
+</html>

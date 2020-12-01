@@ -15,58 +15,75 @@
     $Combustible = $_GET['Combustible'];
     $IdPropietario = $_GET['IdPropietario'];
 ?>
+<html>  
+<head>
+<link rel=StyleSheet href="S_UFORMULARIO.css" type="text/css">
+<title>VEHICULOS</title>
+</head> 
+<body>
+    <div class="Overlay">
+        <form action="" method="POST">
+            <h1 class="Title">VEHICULOS</h1>
 
-<form action="" method="POST">
-    <h1>VEHICULOS</h1>
-    <label>Id Vehiculo: </label>
-    <input type="text" id="id_vehiculo" name="IdVehiculo" value="<?php print($IdVehiculo); ?>" required>
-    <br></br>   
-    <label>Placa: </label>
-    <input type="text" id="placa" name="Placa" value="<?php print($Placa); ?>" required>
-    <br></br>   
-    <label>Clave: </label>
-    <input type="text" id="clave" name="Clave" value="<?php print($Clave); ?>" required>
-    <br></br>   
-    <label>Modelo: </label>
-    <input type="text" id="modelo" name="Modelo" value="<?php print($Modelo); ?>" required>
-    <br></br>   
-    <label>Uso: </label>
-    <input type="text" id="uso" name="Uso" value="<?php print($Uso); ?>" required>
-    <br></br>   
-    <label>Anio: </label>
-    <input type="text" id="anio" name="Anio" value="<?php print($Anio); ?>" required>
-    <br></br>   
-    <label>Origen: </label>
-    <input type="text" id="origen" name="Origen" value="<?php print($Origen); ?>" required>
-    <br></br>   
-    <label>Capacidad: </label>
-    <input type="text" id="capacidad" name="Capacidad" value="<?php print($Capacidad); ?>" required>
-    <br></br>   
-    <label>Marca: </label>
-    <input type="text" id="marca" name="Marca" value="<?php print($Marca); ?>">
-    <br></br>   
-    <label>No. Motor: </label>
-    <input type="text" id="no_motor" name="NoMotor" value="<?php print($NoMotor); ?>">
-    <br></br>   
-    <label>Color: </label>
-    <input type="text" id="color" name="Color" value="<?php print($Color); ?>">
-    <br></br>   
-    <label>Puerta: </label>
-    <input type="text" id="puerta" name="Puerta" value="<?php print($Puerta); ?>">
-    <br></br>   
-    <label>Cilindro: </label>
-    <input type="text" id="cilindro" name="Cilindro" value="<?php print($Cilindro); ?>">
-    <br></br>   
-    <label>Combustible: </label>
-    <input type="text" id="combustible" name="Combustible" value="<?php print($Combustible); ?>">
-    <br></br>   
-    <label>Id Propietario: </label>
-    <input type="text" id="id_propietario" name="IdPropietario" value="<?php print($IdPropietario); ?>">
-    <br></br>   
-    <input type="submit" name="F_VEHICULOS">
-    <input type="reset">
-</form>
+            <div id="vehiculo1">
+                <label class="Texto">Id Vehiculo: </label> <br>
+                <input type="text" id="id_vehiculo" name="IdVehiculo" value="<?php print($IdVehiculo); ?>" required>
+                <br></br>   
+                <label class="Texto">Placa: </label> <br>
+                <input type="text" id="placa" name="Placa" value="<?php print($Placa); ?>" required>
+                <br></br>   
+                <label class="Texto">Clave: </label> <br>
+                <input type="text" id="clave" name="Clave" value="<?php print($Clave); ?>" required>
+                <br></br>   
+                <label class="Texto">Modelo: </label> <br>
+                <input type="text" id="modelo" name="Modelo" value="<?php print($Modelo); ?>" required>
+                <br></br>   
+                <label class="Texto">Uso: </label> <br>
+                <input type="text" id="uso" name="Uso" value="<?php print($Uso); ?>" required>
+                <br></br>   
+                <label class="Texto">Anio: </label> <br>
+                <input type="text" id="anio" name="Anio" value="<?php print($Anio); ?>" required>
+                <br></br>   
+                <label class="Texto">Origen: </label> <br>
+                <input type="text" id="origen" name="Origen" value="<?php print($Origen); ?>" required>
+                <br></br>   
+                <label class="Texto">Capacidad: </label> <br>
+                <input type="text" id="capacidad" name="Capacidad" value="<?php print($Capacidad); ?>" required>
+                <br></br>  
+            </div>
+            
 
+            <div id="vehiculo2">               
+                <label class="Texto">Marca: </label> <br>
+                <input type="text" id="marca" name="Marca" value="<?php print($Marca); ?>">
+                <br></br>   
+                <label class="Texto">No. Motor: </label> <br>
+                <input type="text" id="no_motor" name="NoMotor" value="<?php print($NoMotor); ?>">
+                <br></br>   
+                <label class="Texto">Color: </label> <br>
+                <input type="text" id="color" name="Color" value="<?php print($Color); ?>">
+                <br></br>   
+                <label class="Texto">Puerta: </label> <br>
+                <input type="text" id="puerta" name="Puerta" value="<?php print($Puerta); ?>">
+                <br></br>   
+                <label class="Texto">Cilindro: </label> <br>
+                <input type="text" id="cilindro" name="Cilindro" value="<?php print($Cilindro); ?>">
+                <br></br>   
+                <label class="Texto">Combustible: </label> <br>
+                <input type="text" id="combustible" name="Combustible" value="<?php print($Combustible); ?>">
+                <br></br>   
+                <label class="Texto">Id Propietario: </label> <br>
+                <input type="text" id="id_propietario" name="IdPropietario" value="<?php print($IdPropietario); ?>">
+                <br></br>   
+                <input type="submit" name="F_VEHICULOS">
+                <input type="reset">
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>
 <?php
     if(isset($_POST['IdVehiculo'])){
         $IdVehiculo = $_POST['IdVehiculo'];

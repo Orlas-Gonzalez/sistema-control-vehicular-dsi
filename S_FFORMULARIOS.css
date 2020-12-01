@@ -35,6 +35,17 @@ body{
 	align-items: center;
 	justify-content: center;
 }
+.Overlay3{
+    background: rgba(0,0,0,0.5);
+	position: fixed;
+	top: -300;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 #primera_parte{
     top: 350px;
     left: 500;
@@ -61,17 +72,36 @@ body{
     position: absolute;
     
 }
-.Overlay2{
-    background: rgba(0,0,0,0.5);
-	position: fixed;
-    top: -70;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+#vehiculo1{
+
+    top: 10px;
+    left: 50px;
+    position: absolute;
+    
 }
+#vehiculo2{
+
+    top: 10px;
+    left: 300px;
+    position: absolute;
+    
+}
+#left{
+
+    top: 70px;
+    left: 100px;
+    position: absolute;
+    
+}
+#left2{
+
+    top: 80px;
+    left: 400px;
+    position: absolute;
+    
+}
+
+
 .Title{
     color: white;
     font-size: 400%; /*tamaño de letra */
@@ -91,6 +121,13 @@ body{
     font-size: 350%; /*tamaño de letra */
     top: 133px; /*para hacer las cosas mas arriba o mas abajo */
     left: -447;
+    position: absolute;
+}
+.Title3{
+    color: white;
+    font-size: 400%; /*tamaño de letra */
+    top: 100px; /*para hacer las cosas mas arriba o mas abajo */
+    left: -650;
     position: absolute;
 }
 
@@ -169,5 +206,18 @@ body{
 #rfc{
     width: 160px;
 }
-
-
+#id_tenencia{
+    width: 160px;
+}
+#periodo{
+    width: 160px;
+}
+#monto{
+    width: 160px;
+}
+#id_vehiculo{
+    width: 160px;
+}
+#color{
+    width: 180px;
+}
