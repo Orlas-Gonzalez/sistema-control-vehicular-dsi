@@ -8,6 +8,74 @@
     $Fila = mysqli_fetch_row($Resultado);
     cerrar($conn_MYSQL);
 
+    // Creación del XML
+    function GenerarXML($Fila){
+        $doc = new DOMDocument('1.0');
+
+        $doc->formatOutput = true;
+
+        $raiz = $doc->createElement("LICENCIAS");
+        $raiz = $doc->appendChild($raiz);
+
+        $licencia = $doc->createElement("LICENCIA");
+        $licencia = $raiz->appendChild($licencia);
+
+        $id = $doc->createElement("ID");
+        $id = $licencia->appendChild($id);
+        $textId = $doc->createTextNode($Fila[0]);
+        $textId = $id->appendChild($textId);
+
+        $nombre = $doc->createElement("NOMBRE");
+        $nombre = $licencia->appendChild($nombre);
+        $textNombre = $doc->createTextNode($Fila[1]);
+        $textNombre = $nombre->appendChild($textNombre);
+
+        $fnacimiento = $doc->createElement("FECHADENACIMIENTO");
+        $fnacimiento = $licencia->appendChild($fnacimiento);
+        $textFNacimiento = $doc->createTextNode($Fila[2]);
+        $textFNacimiento = $fnacimiento->appendChild($textFNacimiento);
+
+        $fexpedicion = $doc->createElement("FECHADEEXPEDICION");
+        $fexpedicion = $licencia->appendChild($fexpedicion);
+        $textFExpedicion = $doc->createTextNode($Fila[3]);
+        $textFExpedicion = $fexpedicion->appendChild($textFExpedicion);
+
+        $antiguedad = $doc->createElement("ANTIGUEDAD");
+        $antiguedad = $licencia->appendChild($antiguedad);
+        $textAntiguedad = $doc->createTextNode($Fila[4]);
+        $textAntiguedad = $antiguedad->appendChild($textAntiguedad);
+
+        $tipo = $doc->createElement("TIPO");
+        $tipo = $licencia->appendChild($tipo);
+        $textTipo = $doc->createTextNode($Fila[5]);
+        $textTipo = $tipo->appendChild($textTipo);
+
+        $observacion = $doc->createElement("OBSERVACIONES");
+        $observacion = $licencia->appendChild($observacion);
+        $textObservacion = $doc->createTextNode($Fila[6]);
+        $textObservacion = $observacion->appendChild($textObservacion);
+
+        $sangre = $doc->createElement("TIPODESANGRE");
+        $sangre = $licencia->appendChild($sangre);
+        $textSangre = $doc->createTextNode($Fila[7]);
+        $textSangre = $sangre->appendChild($textSangre);
+
+        $donador = $doc->createElement("DONADOR");
+        $donador = $licencia->appendChild($donador);
+        $textDonador = $doc->createTextNode($Fila[8]);
+        $textDonador = $donador->appendChild($textDonador);
+
+        $telefono = $doc->createElement("TELEFONODEEMERGENCIA");
+        $telefono = $licencia->appendChild($telefono);
+        $textTelefono = $doc->createTextNode($Fila[9]);
+        $textTelefono = $telefono->appendChild($textTelefono);
+        
+        $doc->save("../DSI/XMLS/licencia.xml");
+    }
+
+    //Generación del Archivo XML
+    GenerarXML($Fila);
+
     // Creación del PDF
     require('../DSI/FPDF/fpdf.php'); 
     $pdf = new FPDF("P", "cm", array(5.5, 9.49)); 
