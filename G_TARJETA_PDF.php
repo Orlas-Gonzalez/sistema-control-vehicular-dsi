@@ -1,4 +1,116 @@
 <?php
+    $ID_Propietario = $_GET['IdPropietario'];
+    // Obtención de Datos
+    include("Controlador.php");
+    $conn_MYSQL = conectar();
+    $SQL = "SELECT V.id_vehiculo, V.placa, V.clave, V.modelo, V.uso, V.anio, V.origen, V.capacidad, V.marca, V.no_motor, V.color, V.puerta, V.cilindro, V.combustible, P.id_propietario, P.nombre, P.RFC FROM propietarios AS P, vehiculos AS V WHERE P.id_propietario = $ID_Propietario AND P.id_propietario = V.id_propietario;";
+    $Resultado = consultar($conn_MYSQL, $SQL);
+    $Fila = mysqli_fetch_row($Resultado);
+    cerrar($conn_MYSQL);
+
+    // Creación del XML
+    function GenerarXML($Fila){
+        $doc = new DOMDocument('1.0');
+
+        $doc->formatOutput = true;
+
+        $raiz = $doc->createElement("TARJETASDECIRCULACION");
+        $raiz = $doc->appendChild($raiz);
+
+        $tarjeta = $doc->createElement("TARJETADECIRCULACION");
+        $tarjeta = $raiz->appendChild($tarjeta);
+
+        $idvehiculo = $doc->createElement("IDVEHICULO");
+        $idvehiculo = $tarjeta->appendChild($idvehiculo);
+        $textIdVehiculo = $doc->createTextNode($Fila[0]);
+        $textIdVehiculo = $idvehiculo->appendChild($textIdVehiculo);
+
+        $placa = $doc->createElement("PLACA");
+        $placa = $tarjeta->appendChild($placa);
+        $textPlaca = $doc->createTextNode($Fila[1]);
+        $textPlaca = $placa->appendChild($textPlaca);
+
+        $clave = $doc->createElement("CLAVE");
+        $clave = $tarjeta->appendChild($clave);
+        $textClave = $doc->createTextNode($Fila[2]);
+        $textClave = $clave->appendChild($textClave);
+
+        $modelo = $doc->createElement("MODELO");
+        $modelo = $tarjeta->appendChild($modelo);
+        $textModelo = $doc->createTextNode($Fila[3]);
+        $textModelo = $modelo->appendChild($textModelo);
+
+        $uso = $doc->createElement("USO");
+        $uso = $tarjeta->appendChild($uso);
+        $textUso = $doc->createTextNode($Fila[4]);
+        $textUso = $uso->appendChild($textUso);
+
+        $anio = $doc->createElement("ANIO");
+        $anio = $tarjeta->appendChild($anio);
+        $textAnio = $doc->createTextNode($Fila[5]);
+        $textAnio = $anio->appendChild($textAnio);
+
+        $origen = $doc->createElement("ORIGEN");
+        $origen= $tarjeta->appendChild($origen);
+        $textOrigen = $doc->createTextNode($Fila[6]);
+        $textOrigen = $origen->appendChild($textOrigen);
+
+        $capacidad = $doc->createElement("CAPACIDAD");
+        $capacidad = $tarjeta->appendChild($capacidad);
+        $textCapacidad = $doc->createTextNode($Fila[7]);
+        $textCapacidad = $capacidad->appendChild($textCapacidad);
+
+        $marca = $doc->createElement("MARCA");
+        $marca = $tarjeta->appendChild($marca);
+        $textMarca = $doc->createTextNode($Fila[8]);
+        $textMarca = $marca->appendChild($textMarca);
+
+        $nomotor = $doc->createElement("NOMOTOR");
+        $nomotor = $tarjeta->appendChild($nomotor);
+        $textNoMotor = $doc->createTextNode($Fila[9]);
+        $textNoMotor = $nomotor->appendChild($textNoMotor);
+
+        $color = $doc->createElement("COLOR");
+        $color = $tarjeta->appendChild($color);
+        $textColor = $doc->createTextNode($Fila[10]);
+        $textColor = $color->appendChild($textColor);
+
+        $puerta = $doc->createElement("PUERTA");
+        $puerta = $tarjeta->appendChild($puerta);
+        $textPuerta = $doc->createTextNode($Fila[11]);
+        $textPuerta = $puerta->appendChild($textPuerta);
+
+        $cilindro = $doc->createElement("CILINDRO");
+        $cilindro = $tarjeta->appendChild($cilindro);
+        $textCilindro = $doc->createTextNode($Fila[12]);
+        $textCilindro = $cilindro->appendChild($textCilindro);
+
+        $combustible = $doc->createElement("COMBUSTIBLE");
+        $combustible = $tarjeta->appendChild($combustible);
+        $textCombustible = $doc->createTextNode($Fila[13]);
+        $textCombustible = $combustible->appendChild($textCombustible);
+
+        $idpropietario = $doc->createElement("IDPROPIETARIO");
+        $idpropietario = $tarjeta->appendChild($idpropietario);
+        $textPropietario = $doc->createTextNode($Fila[14]);
+        $textPropietario = $idpropietario->appendChild($textPropietario);
+
+        $nombre = $doc->createElement("NOMBRE");
+        $nombre = $tarjeta->appendChild($nombre);
+        $textNombre = $doc->createTextNode($Fila[15]);
+        $textNombre = $nombre->appendChild($textNombre);
+
+        $rfc = $doc->createElement("RFC");
+        $rfc = $tarjeta->appendChild($rfc);
+        $textRFC = $doc->createTextNode($Fila[16]);
+        $textRFC = $rfc->appendChild($textRFC);
+        
+        $doc->save("../DSI/XMLS/tarjeta_de_circulacion.xml");
+    }
+
+    //Generación del Archivo XML
+    GenerarXML($Fila);
+
     require('../DSI/FPDF/fpdf.php');
     $pdf = new FPDF("L", "cm", array(10, 7)); 
     $pdf->AddPage(); 
@@ -18,7 +130,7 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("Tipo de Servicio"), 0, 1, 'L');
     $pdf->SetXY(0.2, 0.48);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("PARTICULAR"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[4]), 0, 1, 'L');
     $pdf->SetXY(2.3, 0.2);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("HOLOGRAMA"), 0, 1, 'L');
@@ -42,19 +154,19 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("PLACA"), 0, 1, 'L');
     $pdf->SetXY(6.9, 0.48);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("2009/VLB5467*"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[1]), 0, 1, 'L');
     $pdf->SetXY(0.2, 0.76);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("PROPITEARIO"), 0, 1, 'L');
     $pdf->SetXY(1.2, 0.76);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("GARCIA CORTES SERGIO ORLANDO"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[15]), 0, 1, 'L');
     $pdf->SetXY(0.2, 1.32);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("RFC"), 0, 1, 'L');
     $pdf->SetXY(0.2, 1.6);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("HBHB801539UJ5"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[16]), 0, 1, 'L');
     $pdf->SetXY(0.2, 1.88);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("LOCALIDAD"), 0, 1, 'L');
@@ -72,13 +184,13 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("ORIGEN"), 0, 1, 'L');
     $pdf->SetXY(0.2, 4.12);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("NACIONAL"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[6]), 0, 1, 'L');
     $pdf->SetXY(0.2, 4.4);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("COLOR"), 0, 1, 'L');
     $pdf->SetXY(0.2, 4.68);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("BLANCO"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[10]), 0, 1, 'L');
     $pdf->SetXY(2.85, 1.32);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("NUMERO DE SERIE"), 0, 1, 'L');
@@ -90,10 +202,10 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("MARCA/LINEA/SUBLÍNEA"), 0, 1, 'L');
     $pdf->SetXY(2.85, 2.16);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("CHEVROLET"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[8]), 0, 1, 'L');
     $pdf->SetXY(2.85, 2.44);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("G.M./PONTIAC/SUNFIRE GT"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode("G.M./VERSION/LINAJE GT"), 0, 1, 'L');
     $pdf->SetXY(2.85, 2.72);
     $pdf->SetFont('Arial','', 7);
     $pdf->Cell(1.5, 0.3, utf8_decode("PQ.L"), 0, 1, 'L');
@@ -114,25 +226,25 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("COMBUSTIBLE"), 0, 1, 'L');
     $pdf->SetXY(3.95, 3.28);
     $pdf->SetFont('Arial','', 3.8);
-    $pdf->Cell(1.5, 0.3, utf8_decode("4"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[12]), 0, 1, 'L');
     $pdf->SetXY(3.95, 3.46);
     $pdf->SetFont('Arial','', 3.8);
-    $pdf->Cell(1.5, 0.3, utf8_decode("0"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[7]), 0, 1, 'L');
     $pdf->SetXY(3.95, 3.64);
     $pdf->SetFont('Arial','', 3.8);
-    $pdf->Cell(1.5, 0.3, utf8_decode("2"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[11]), 0, 1, 'L');
     $pdf->SetXY(3.95, 3.82);
     $pdf->SetFont('Arial','', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("5"), 0, 1, 'L');
     $pdf->SetXY(3.95, 4);
     $pdf->SetFont('Arial','', 3.8);
-    $pdf->Cell(1.5, 0.3, utf8_decode("1"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[13]), 0, 1, 'L');
     $pdf->SetXY(4.3, 3.28);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("CVE VEHICULAR"), 0, 1, 'L');
     $pdf->SetXY(4.3, 3.46);
     $pdf->SetFont('Arial','', 5);
-    $pdf->Cell(1.5, 0.3, utf8_decode("0042428"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[2]), 0, 1, 'L');
     $pdf->SetXY(4.3, 3.74);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("CLASE"), 0, 1, 'L');
@@ -165,13 +277,13 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("MODELO"), 0, 1, 'L');
     $pdf->SetXY(6.5, 1.6);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("1997"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[3]), 0, 1, 'L');
     $pdf->SetXY(6.5, 1.88);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("OPERACIÓN"), 0, 1, 'L');
     $pdf->SetXY(6.5, 2.16);
     $pdf->SetFont('Arial','', 7);
-    $pdf->Cell(1.5, 0.3, utf8_decode("2018/1214949"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[5]), 0, 1, 'L');
     $pdf->SetXY(6.5, 2.44);
     $pdf->SetFont('Arial','B', 3.8);
     $pdf->Cell(1.5, 0.3, utf8_decode("FOLIO"), 0, 1, 'L');
@@ -201,6 +313,6 @@
     $pdf->Cell(1.5, 0.3, utf8_decode("NÚMERO DE MOTOR"), 0, 1, 'L');
     $pdf->SetXY(8, 4.68);
     $pdf->SetFont('Arial','', 5);
-    $pdf->Cell(1.5, 0.3, utf8_decode("VS237736"), 0, 1, 'L');
+    $pdf->Cell(1.5, 0.3, utf8_decode($Fila[9]), 0, 1, 'L');
     $pdf->Output();
 ?>

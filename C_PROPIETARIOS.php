@@ -68,7 +68,7 @@
                 ?>
                                 <td><a href="D_Propietarios.php?SKU_Prop=<?php print($Fila[0]); ?>">Eliminar</a></td>
                                 <td><a href="U_Propietarios.php?IdPropietario=<?php print($Fila[0]); ?>&RFC=<?php print($Fila[1]); ?>&Nombre=<?php print($Fila[2]); ?>">Actualizar</a></td>
-                                <td><a href="G_TARJETA_PDF.php?IdLicencia=<?php print($Fila[0]); ?>">Visualizar</a></td>
+                                <td><a href="G_TARJETA_PDF.php?IdPropietario=<?php print($Fila[0]); ?>">Visualizar</a></td>
                 <?php
                                 }
                 ?>
