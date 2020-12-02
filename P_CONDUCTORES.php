@@ -1,3 +1,22 @@
+<html>
+<head>
+    <link rel=StyleSheet href="S_PFORMULARIOS.css" type="text/css"> 
+    <title>Inserción de Conductores</title>
+</head>
+<body>
+    <div class="Overlay">
+        <?php
+            session_start();
+            if($_SESSION['Tipo'] == 'U'){
+        ?>
+                <a href="MENU_USUARIO.php"><img src="Images/CSS/returng.png" class="Return"></a>
+        <?php
+            }else{
+        ?>
+                <a href="MENU_ADMINISTRADOR.php"><img src="Images/CSS/returng.png" class="Return"></a>
+        <?php
+            }
+        ?>
 <?php
     $id_conductor = $_REQUEST['IdConductor'];
     $foto = $_REQUEST['Foto'];
@@ -10,27 +29,18 @@
     $antiguedad = $_REQUEST['Antiguedad'];
     $donador = $_REQUEST['Donador'];
     $t_emergencia = $_REQUEST['TelefonoEmergencia'];
-    
-    print(" Id Condictor: ".$id_conductor);
-    print(" Foto: ".$foto);
-    print(" Huella: ".$huella);
-    print(" Firma: ".$firma);
-    print(" Nombre: ".$nombre);
-    print(" Fecha de Nacimiento: ".$fecha_nacimiento);
-    print(" Tipo de Sangre: ".$t_sangre);
-    print(" Observacion: ".$observacion);
-    print(" Antiguedad: ".$antiguedad);
-    print(" Donador: ".$donador);
-    print(" Telefono de Emergencia: ".$t_emergencia);
 
     include("Controlador.php");
     $conn_MYSQL = conectar();
     $SQL = "INSERT INTO conductores VALUES(NULL, '$foto', '$huella', '$firma', '$nombre', '$fecha_nacimiento', '$t_sangre', '$observacion', '$antiguedad', '$donador', '$t_emergencia');";
     $Resultado = consultar($conn_MYSQL, $SQL);
     if($Resultado == 1){
-        print("<h1>Registro Insertado Correctamente</h1>");
+        echo("<img src='Images/CSS/exitoso.png' class='Registro'>");
     }else{
-        print("<h1>ERROR: La Operación No Se Pudo Realizar</h1>");
+        echo("<img src='Images/CSS/fallido.png' class='Registro'>");
     }
     cerrar($conn_MYSQL);
 ?>
+    </div>
+</body>
+</html>

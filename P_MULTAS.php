@@ -1,3 +1,22 @@
+<html>
+<head>
+    <link rel=StyleSheet href="S_PFORMULARIOS.css" type="text/css"> 
+    <title>Inserción de Multas</title>
+</head>
+<body>
+    <div class="Overlay">
+        <?php
+            session_start();
+            if($_SESSION['Tipo'] == 'U'){
+        ?>
+                <a href="MENU_USUARIO.php"><img src="Images/CSS/returng.png" class="Return"></a>
+        <?php
+            }else{
+        ?>
+                <a href="MENU_ADMINISTRADOR.php"><img src="Images/CSS/returng.png" class="Return"></a>
+        <?php
+            }
+        ?>
 <?php
     $folio = $_POST['Folio'];
     $nombre = $_POST['Nombre'];
@@ -11,26 +30,17 @@
     $id_licencia = $_POST['IdLicencia'];
     $id_vehiculo = $_POST['IdVehiculo'];
     
-    print(" Folio: ".$folio);
-    print(" Nombre: ".$nombre);
-    print(" Concepto: ".$concepto);
-    print(" No. de Infraccion: ".$no_infraccion);
-    print(" Policia: ".$policia);
-    print(" Fecha: ".$fecha);
-    print(" Hora: ".$hora);
-    print(" Lugar: ".$lugar);
-    print(" Garantia: ".$garantia);
-    print(" Id Licencia: ".$id_licencia);
-    print(" Id Vehiculo: ".$id_vehiculo);
-
     include("Controlador.php");
     $conn_MYSQL = conectar();
     $SQL = "INSERT INTO multas(folio, nombre, concepto, no_infrac, policia, fecha, hora, lugar, garantia, id_licencia, id_vehiculo) VALUES(NULL, '$nombre', '$concepto', '$no_infraccion', '$policia', '$fecha', '$hora', '$lugar', '$garantia', '$id_licencia', '$id_vehiculo');";
     $Resultado = consultar($conn_MYSQL, $SQL);
     if($Resultado == 1){
-        print("<h1>Registro Insertado Correctamente</h1>");
+        echo("<img src='Images/CSS/exitoso.png' class='Registro'>");
     }else{
-        print("<h1>ERROR: La Operación No Se Pudo Realizar</h1>");
+        echo("<img src='Images/CSS/fallido.png' class='Registro'>");
     }
     cerrar($conn_MYSQL);
 ?>
+    </div>
+</body>
+</html>
