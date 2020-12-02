@@ -122,6 +122,7 @@
     $pdf->Image("../DSI/Images/Tarjeta_Circulacion/QR.png", 8.5, 5.7, 1.2);
     $pdf->Image("../DSI/Images/Tarjeta_Circulacion/QRO_E.png", 3.8, 5.7, 0.9);
     $pdf->Image("../DSI/Images/Tarjeta_Circulacion/peeq.jpg", 4.9, 5.6, 1.5);
+    $pdf->Image("../DSI/Images/BarCodes/000100255590.png", 8.5, 0.4, 1);
     $pdf->SetDrawColor(165);
     $pdf->SetLineWidth(0.01);
     $pdf->Line(4.83, 5.7, 4.83, 6.3);

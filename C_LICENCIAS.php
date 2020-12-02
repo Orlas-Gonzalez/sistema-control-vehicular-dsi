@@ -71,6 +71,7 @@
                 ?>
                                 <td>No Aplica</td>
                                 <td>No Aplica</td>
+                                <td><a href="G_LICENCIA_PDF.php?IdLicencia=<?php print($Fila[0]); ?>">Visualizar</a></td>
                 <?php
                                 }else{
                 ?>

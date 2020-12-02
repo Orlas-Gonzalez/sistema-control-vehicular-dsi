@@ -63,6 +63,7 @@
                 ?>
                                 <td>No Aplica</td>
                                 <td>No Aplica</td>
+                                <td><a href="G_TARJETA_PDF.php?IdPropietario=<?php print($Fila[0]); ?>">Visualizar</a></td>
                 <?php
                                 }else{
                 ?>

@@ -52,5 +52,14 @@ body{
     font-weight: bold;
 }
 
+#Id_Cuenta{
+    text-align: center;
+}
 
+#Password{
+    text-align: center;
+}
 
+.Centrado{
+    text-align: center;
+}

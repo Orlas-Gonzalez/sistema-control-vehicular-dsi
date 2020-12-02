@@ -145,8 +145,8 @@ function barcode( $filepath="", $text="0", $size="20", $orientation="horizontal"
 		imagepng($image);
 		imagedestroy($image);
 	} else {
-		/*imagepng($image,$filepath);
-		imagedestroy($image);		*/
+		imagepng($image,$filepath);
+		imagedestroy($image);		
 	}
 }
 
